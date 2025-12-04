@@ -1,27 +1,53 @@
-# Ngrx
+# NgRx Store Learning Playground
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+A hands-on Angular project for learning NgRx state management fundamentals.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This repository demonstrates core NgRx concepts through a practical counter application, showcasing state management patterns and best practices.
 
-## Code scaffolding
+## Features Demonstrated
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Actions**: Declarative events (`increment`, `decrement`, `reset`, `customIncrement`)
+- **Reducers**: Pure functions handling state transitions
+- **Selectors**: Efficient state queries
+- **Store**: Centralized state container
+- **DevTools**: Redux DevTools integration for debugging
 
-## Build
+## Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/app/
+├── counter/
+│   ├── states/
+│   │   ├── counter.actions.ts    # Action definitions
+│   │   ├── counter.reducer.ts    # State reducer
+│   │   ├── counter.selector.ts   # State selectors
+│   │   └── counter.state.ts      # State interface
+│   ├── counter-button/           # Action dispatch components
+│   ├── counter-value/            # State display component
+│   └── custom-input/             # Dynamic action payloads
+```
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+npm start
+```
 
-## Running end-to-end tests
+Navigate to `http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Tech Stack
 
-## Further help
+- Angular 16
+- @ngrx/store 16.3
+- @ngrx/store-devtools
+- TypeScript 5.1
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Learning Resources
+
+- Counter component with increment/decrement actions
+- Custom increment with action payloads
+- State selectors for computed values
+- Component communication via store
