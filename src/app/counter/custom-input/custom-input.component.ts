@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CounterState } from '../states/counter.state';
+import { AppState } from 'src/app/store/app.state';
 import { customIncrement, toggleCustomInput } from '../states/counter.actions';
 import { getToggle } from '../states/counter.seclector';
 
@@ -13,7 +13,7 @@ export class CustomInputComponent {
   customValue = 0;
   showCustomInput$ = this.store.select(getToggle);
 
-  constructor(private store: Store<{ counter: CounterState }>) {}
+  constructor(private store: Store<AppState>) {}
 
   onValueChanged() {
     this.store.dispatch(customIncrement({ value: +this.customValue }));

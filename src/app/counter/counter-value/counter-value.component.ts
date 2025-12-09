@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CounterState } from '../states/counter.state';
+import { AppState } from 'src/app/store/app.state';
 import { getCounter } from '../states/counter.seclector';
 
 @Component({
@@ -9,7 +9,7 @@ import { getCounter } from '../states/counter.seclector';
   styleUrls: ['./counter-value.component.css'],
 })
 export class CounterValueComponent {
-  constructor(private store: Store<{ counter: CounterState }>) {}
+  constructor(private store: Store<AppState>) {}
 
   counter$ = this.store.select(getCounter);
 }

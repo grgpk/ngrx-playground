@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
 import { decrement, increment, reset } from '../states/counter.actions';
-import { CounterState } from '../states/counter.state';
 
 @Component({
   selector: 'app-counter-button',
@@ -9,7 +9,7 @@ import { CounterState } from '../states/counter.state';
   styleUrls: ['./counter-button.component.css'],
 })
 export class CounterButtonComponent {
-  constructor(private store: Store<{ counter: CounterState }>) {}
+  constructor(private store: Store<AppState>) {}
 
   onIncrement() {
     this.store.dispatch(increment());
